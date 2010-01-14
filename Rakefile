@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "serenity"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{TODO: Gracefully handles multi-level configuration options from Yaml files}
+    gem.description = %Q{TODO: Handles configuration options from Yaml files, returning multi-level values with appropriate error messaging.}
     gem.email = "progressions@gmail.com"
     gem.homepage = "http://github.com/progressions/serenity"
     gem.authors = ["Jeff Coleman"]
@@ -22,6 +22,7 @@ require 'spec/rake/spectask'
 Spec::Rake::SpecTask.new(:spec) do |spec|
   spec.libs << 'lib' << 'spec'
   spec.spec_files = FileList['spec/**/*_spec.rb']
+  spec.spec_opts = ['-c']
 end
 
 Spec::Rake::SpecTask.new(:rcov) do |spec|
