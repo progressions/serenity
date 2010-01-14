@@ -20,6 +20,8 @@ require 'yaml'
 #    @config.get("wife", "name")    #=> "Wilma Flintstone"
 # 
 module Serenity
+  class OptionNotFoundError < StandardError; end
+    
   class Configuration
     attr_accessor :filename, :options
   
@@ -42,12 +44,12 @@ module Serenity
           c = c[arg]
         else
           missing_option_index = i
-          raise "Option not found."
+          raise OptionNotFoundError
         end
       end
     
       c
-    rescue 
+    rescue OptionNotFoundError => e
       $stdout.puts "The following option was not found in #{filename}:"
       (0..missing_option_index).each do |i|
         $stdout.puts args[i]
@@ -55,7 +57,7 @@ module Serenity
       $stdout.puts
       $stdout.puts "Are you sure #{filename} is up to date?"
       $stdout.puts
-      raise "Option not found."
+      raise e
     end
   end
 end
