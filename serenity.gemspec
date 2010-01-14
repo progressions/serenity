@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeff Coleman"]
   s.date = %q{2010-01-13}
-  s.description = %q{TODO: Handles configuration options from Yaml files, returning multi-level values with appropriate error messaging.}
+  s.description = %q{Handles configuration options from Yaml files, returning multi-level values with appropriate error messaging.}
   s.email = %q{progressions@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -22,7 +22,9 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README.rdoc",
      "Rakefile",
+     "VERSION",
      "lib/serenity.rb",
+     "serenity.gemspec",
      "spec/serenity_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
@@ -31,7 +33,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{TODO: Gracefully handles multi-level configuration options from Yaml files}
+  s.summary = %q{Gracefully handles multi-level configuration options from Yaml files}
   s.test_files = [
     "spec/serenity_spec.rb",
      "spec/spec_helper.rb"
