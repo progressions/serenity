@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "serenity"
-    gem.summary = %Q{TODO: Gracefully handles multi-level configuration options from Yaml files}
-    gem.description = %Q{TODO: Handles configuration options from Yaml files, returning multi-level values with appropriate error messaging.}
+    gem.summary = %Q{Gracefully handles multi-level configuration options from Yaml files}
+    gem.description = %Q{Handles configuration options from Yaml files, returning multi-level values with appropriate error messaging.}
     gem.email = "progressions@gmail.com"
     gem.homepage = "http://github.com/progressions/serenity"
     gem.authors = ["Jeff Coleman"]
