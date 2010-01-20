@@ -1,6 +1,23 @@
 = serenity
 
-Description goes here.
+Returns values from multi-level YAML configuration files.
+
+Gracefully handles error messages when an option is not found.
+
+== Usage
+
+   Given config.yml:
+     name: Fred Flintstone
+     wife:
+       name: Wilma Flintstone
+     friend:
+       name: Barney Rubble
+       wife: Betty Rubble
+
+   @config = Serenity::Configuration.new("config.yml")
+
+   @config.get("name")            #=> "Fred Flinstone"
+   @config.get("wife", "name")    #=> "Wilma Flintstone"
 
 == Note on Patches/Pull Requests
  

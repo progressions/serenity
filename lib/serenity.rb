@@ -4,7 +4,7 @@ require 'yaml'
 # 
 # Gracefully handles error messages when an option is not found.
 #
-# Usage:
+# == Usage
 #
 #    Given config.yml:
 #      name: Fred Flintstone
