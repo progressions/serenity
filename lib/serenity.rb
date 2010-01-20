@@ -6,18 +6,19 @@ require 'yaml'
 #
 # == Usage
 #
-#    Given config.yml:
-#      name: Fred Flintstone
-#      wife:
-#        name: Wilma Flintstone
-#      friend:
-#        name: Barney Rubble
-#        wife: Betty Rubble
+# Given config.yml:
 #
-#    @config = Serenity::Configuration.new("config.yml")
-#
-#    @config.get("name")            #=> "Fred Flinstone"
-#    @config.get("wife", "name")    #=> "Wilma Flintstone"
+#   name: Fred Flintstone
+#   wife:
+#     name: Wilma Flintstone
+#   friend:
+#     name: Barney Rubble
+#     wife: Betty Rubble
+# 
+#   @config = Serenity::Configuration.new("config.yml")
+# 
+#   @config.get("name")            #=> "Fred Flinstone"
+#   @config.get("wife", "name")    #=> "Wilma Flintstone"
 # 
 module Serenity
   class OptionNotFoundError < StandardError; end

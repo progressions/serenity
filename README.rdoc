@@ -6,18 +6,20 @@ Gracefully handles error messages when an option is not found.
 
 == Usage
 
-   Given config.yml:
-     name: Fred Flintstone
-     wife:
-       name: Wilma Flintstone
-     friend:
-       name: Barney Rubble
-       wife: Betty Rubble
+Given config.yml:
 
-   @config = Serenity::Configuration.new("config.yml")
+  name: Fred Flintstone
+  wife:
+    name: Wilma Flintstone
+  friend:
+    name: Barney Rubble
+    wife: Betty Rubble
 
-   @config.get("name")            #=> "Fred Flinstone"
-   @config.get("wife", "name")    #=> "Wilma Flintstone"
+  @config = Serenity::Configuration.new("config.yml")
+
+  @config.get("name")            #=> "Fred Flinstone"
+  @config.get("wife", "name")    #=> "Wilma Flintstone"
+
 
 == Note on Patches/Pull Requests
  
