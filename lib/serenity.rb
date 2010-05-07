@@ -4,25 +4,22 @@ require 'yaml'
 # 
 # Gracefully handles error messages when an option is not found.
 #
-# == Usage
+# Usage:
 #
-# Given config.yml:
+#    Given config.yml:
+#      name: Fred Flintstone
+#      wife:
+#        name: Wilma Flintstone
+#      friend:
+#        name: Barney Rubble
+#        wife: Betty Rubble
 #
-#   name: Fred Flintstone
-#   wife:
-#     name: Wilma Flintstone
-#   friend:
-#     name: Barney Rubble
-#     wife: Betty Rubble
-# 
-#   @config = Serenity::Configuration.new("config.yml")
-# 
-#   @config.get("name")            #=> "Fred Flinstone"
-#   @config.get("wife", "name")    #=> "Wilma Flintstone"
+#    @config = Serenity::Configuration.new("config.yml")
+#
+#    @config.get("name")            #=> "Fred Flinstone"
+#    @config.get("wife", "name")    #=> "Wilma Flintstone"
 # 
 module Serenity
-  class OptionNotFoundError < StandardError; end
-    
   class Configuration
     attr_accessor :filename, :options
   
@@ -33,6 +30,23 @@ module Serenity
   
     def to_hash
       options
+    end
+    
+    def exists?(*args)
+      c = options
+    
+      missing_option_index = 0
+    
+      args.each_with_index do |arg, i|
+        if c.is_a?(Hash) && c.has_key?(arg)
+          c = c[arg]
+        else
+          missing_option_index = i
+          c = nil
+        end
+      end
+    
+      c      
     end
   
     def get(*args)
@@ -45,12 +59,12 @@ module Serenity
           c = c[arg]
         else
           missing_option_index = i
-          raise OptionNotFoundError
+          raise "Option not found."
         end
       end
     
       c
-    rescue OptionNotFoundError => e
+    rescue 
       $stdout.puts "The following option was not found in #{filename}:"
       (0..missing_option_index).each do |i|
         $stdout.puts args[i]
@@ -58,7 +72,7 @@ module Serenity
       $stdout.puts
       $stdout.puts "Are you sure #{filename} is up to date?"
       $stdout.puts
-      raise e
+      raise "Option not found."
     end
   end
 end
