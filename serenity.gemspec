@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/progressions/serenity}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Gracefully handles multi-level configuration options from Yaml files}
   s.test_files = [
     "spec/serenity_spec.rb",
