@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{serenity}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeff Coleman"]
-  s.date = %q{2010-01-13}
+  s.date = %q{2010-05-07}
   s.description = %q{Handles configuration options from Yaml files, returning multi-level values with appropriate error messaging.}
   s.email = %q{progressions@gmail.com}
   s.extra_rdoc_files = [
